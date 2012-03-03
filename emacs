@@ -1,16 +1,19 @@
 ;; package-install
 ;; - starter-kit
 ;; - starter-kit-js
+;; - starter-kit-ruby
 ;; - color-theme
 
-;; for git to be visible
+;; magit goes wild without it, possibly useful for other things too
 (push "/usr/local/bin" exec-path)
 
+;; set up packages repository
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+;; window initial size and positioning
 (add-to-list 'default-frame-alist '(left . 750))
 (add-to-list 'default-frame-alist '(top . 80))
 (add-to-list 'default-frame-alist '(height . 60))
@@ -20,17 +23,14 @@
 (require 'color-theme)
 (color-theme-goldenrod)
 
+;; no more dangling backups everywhere
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-;;(desktop-save-mode 1)
+;; removes unneeded whitespaces!
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
-;;(fset 'yes-or-no-p 'y-or-n-p)
-
-;;(when (fboundp 'toggle-scroll-bar) (toggle-scroll-bar -1))
-
-;;(setq visible-bell t)
-;;(setq line-number-mode t)
-;;(setq column-number-mode t)
-
-;;(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
-
+;; easy windows switch
+(global-set-key [M-left] 'windmove-left)          ; move to left windnow
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to downer window
