@@ -1,0 +1,10 @@
+[user]
+        name = prozz
+        email = prozz@gmail.com
+[github]
+        user = prozz
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        w = whatchanged
