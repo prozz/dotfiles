@@ -1,10 +1,25 @@
 [user]
         name = prozz
-        email = prozz@gmail.com
+        email = prozzz@gmail.com
 [github]
         user = prozz
+[core]
+        editor = vim
 [alias]
-        co = checkout
-        ci = commit
         st = status
+        ci = commit
+        co = checkout
+        br = branch
+        unstage = reset HEAD
+        cleanup = reset --hard HEAD
+        l = log --pretty=oneline --graph --abbrev-commit
+        sl = stash list
+        ss = stash save
+        sp = stash pop
         w = whatchanged
+[color]
+        interactive = auto
+        status = auto
+        branch = auto
+        diff = auto
+        ui = auto
