@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d")
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -20,7 +22,6 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-(add-to-list 'load-path "~/.emacs.d")
 
 ; no more dangling backups everywhere
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
@@ -54,6 +55,10 @@
 
 (fset 'compile-and-goto-repl "\C-x\C-s\C-c\C-k\C-c\C-z")
 (global-set-key [f6] 'compile-and-goto-repl)
+
+(winner-mode 1)
+(desktop-save-mode 1)
+(savehist-mode 1)
 
 ;(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 ;; magit goes wild without it, possibly useful for other things too
