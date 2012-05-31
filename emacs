@@ -50,11 +50,12 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+; clojure
 (global-rainbow-delimiters-mode 1)
 (global-set-key (kbd "C-c C-j") 'clojure-jack-in)
-
 (fset 'compile-and-goto-repl "\C-x\C-s\C-c\C-k\C-c\C-z")
 (global-set-key [f6] 'compile-and-goto-repl)
+(setq lisp-indent-offset 2)
 
 (winner-mode 1)
 (desktop-save-mode 1)
@@ -67,7 +68,6 @@
 ;(setenv "PATH" (shell-command-to-string "echo $PATH"))
 
 (find-file "~/todo.org")
-(find-file "~/clog/src/clog/core.clj")
 (find-file "~/.emacs")
 
 (custom-set-variables
